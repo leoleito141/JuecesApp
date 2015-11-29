@@ -1,0 +1,85 @@
+<ion-view title="Jueces Rio 2016">
+    <ion-view title="Competencias Pendientes">
+	<ion-nav-buttons side="right" ng-show="false">
+        <button class="button button-icon button-clear ion-power" ng-click="logout()">
+        </button>
+      </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+       
+            <ion-list can-swipe="listCanSwipe">
+                
+  
+               
+    <div class="list" ng-init="listarCompetenciasPendientes()">
+	<form role="form" name="formResultado1">
+		<div class="form-group">
+
+			
+			<ion-item ng-repeat="c in competencias">
+		   
+		        
+		        
+		       		<div class="row">
+	            		<h3 >
+						<span style="color: #0a9dc7;">Competencia {{c.idCompetencia}}</span></h3>
+	            	</div>
+	            	
+	            	<div class="row">
+	            		<label>Ronda:</label>		N&#186; {{c.ronda}}
+            	 	</div>
+	            	 
+	            	<div class="row">
+	            		<label>Deporte:</label>		{{c.nombreDeporte}} {{c.nombreDisciplina}}
+<!-- 										   			{{c.tipoDeporte}} -->
+					 </div>
+		            
+					<div class="row">
+	            		<label>Sexo:</label>		 {{c.sexo}}
+<!-- 										   			{{c.tipoDeporte}} -->
+					 </div>
+					
+	             	<div class="row">
+	            		<label>Fecha:</label>		{{c.fecha  | date:'dd-MM-yyyy HH:mm'}} hs.
+		            </div>
+		            
+					<div class="row">
+						<label>Lugar:</label>		{{c.estadio}}
+					</div>
+					
+					
+					<ion-option-button class="button-calm" 
+                       ng-click="setCompetenciaSeleccionada(c.idCompetencia)">
+						Agregar Resultado
+					</ion-option-button>
+					
+					
+					    </ion-item>
+					 
+
+		        <!--     <div class="row" >
+		            	<div class="col-sm-offset-8 col-sm-2">
+				            <a ui-sref="altaResultado.paso2" 
+				            ng-click="setCompetenciaSeleccionada(c.idCompetencia)" class="btn btn-block btn-info">
+				            	Siguiente 
+				            	<span class="glyphicon glyphicon-circle-arrow-right"></span>
+							</a>
+						</div>
+					</div>
+		            <hr />
+					
+					-->
+		       		
+		    
+		</div>
+	</form>
+</div>
+
+                    
+                
+            </ion-list>
+           
+       
+    </ion-content>
+</ion-view>
+ 
+</ion-view>

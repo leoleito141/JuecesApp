@@ -1,0 +1,87 @@
+<ion-view title="Jueces Rio 2016">
+    <ion-view title="Crear Resultado">
+	<ion-nav-buttons side="right" ng-show="false">
+        <button class="button button-icon button-clear ion-power" ng-click="logout()">
+        </button>
+      </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+        <div class="list">
+	<form role="form"  name="formResultado2">
+		<div class="form-group">
+			
+			<div class="list">
+			
+			
+			<label class="item item-input item-select">
+				 <div class="input-label">
+				Participantes
+				</div>		
+						
+	   				<select  
+							 
+							 ng-model="estadistica.objeto" 
+	   						 ng-options="o.nombre for o in objetosCombo track by o.id"
+							 ng-disabled="objetosCombo.length == 0"
+	   						 >
+					 </select>
+		   	
+			
+			</label>
+					
+			</div>
+					
+			<div class="list">
+				<label class="item item-input item-select">
+					 <div class="input-label">
+				Posici&oacute;n
+				</div>	
+					
+		   			<select  
+				   			ng-model="estadistica.posicion" 
+				   			ng-options="pos for pos in posiciones"
+							ng-disabled="objetosCombo.length == 0">
+		   			</select>
+		   		
+				</label>
+			</div>			
+				
+
+				
+			
+			
+				<div class="col-sm-10">
+				<label class="item item-input">
+					<textarea id="datoInformativo" 
+							  ng-model="estadistica.datoInformativo"
+							  ng-disabled="objetosCombo.length == 0"
+							  rows="5" 
+							  cols="30"
+							  placeholder="Dato Informativo" 
+							  class="form-control" 
+							  required>
+					</textarea>
+				 </label>
+				</div>
+			
+			<div class="button-bar">
+			<button class="button button-balanced" type="submit" ng-disabled="estadisticas.length == 0" ng-click="altaResultado()" >Finalizar</button>
+			<a class="button button-calm" ng-disabled="habilitar()" ng-click="agregarEstadistica()" >Aceptar</a>
+  
+			</div>
+		
+		<!--					
+          	<div class="col-sm-2">
+	            <a ng-disabled="!estadisticas.length == 0" ng-click="limpiarDatos(false)" class="btn btn-block btn-info"> 
+		            <span class="glyphicon glyphicon-circle-arrow-left"></span>
+		            Atr&aacute;s
+	            </a>
+			</div>
+		-->
+						
+		</div>
+	</form>
+</div>
+    </ion-content>
+</ion-view>
+ 
+</ion-view>
