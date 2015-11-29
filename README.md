@@ -1,2 +1,2 @@
 # JuecesApp
-Ionic Application
+Ionic App
